@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Wu Minzhe"]
   spec.email         = ["wuminzhe@gmail.com"]
 
-  spec.summary       = %q{ruby common utilities and libraries for substrate}
-  spec.description   = %q{ruby common utilities and libraries for substrate}
+  spec.summary       = %q{Common utilities and libraries for substrate in ruby}
+  spec.description   = %q{Common utilities and libraries for substrate in ruby}
   spec.homepage      = "https://github.com/wuminzhe/substrate_common.rb"
   spec.license       = "MIT"
 
