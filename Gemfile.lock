@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rb-substrate-common (0.1.0)
+    substrate_common.rb (0.1.0)
       base58
       blake2b
       xxhash
@@ -26,7 +26,7 @@ DEPENDENCIES
   bundler (~> 1.17)
   pry
   rake (~> 10.0)
-  rb-substrate-common!
+  substrate_common.rb!
 
 BUNDLED WITH
    1.17.3
