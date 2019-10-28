@@ -3,6 +3,9 @@ require 'xxhash'
 require 'blake2b'
 require 'base58'
 
+
+require 'substrate_common/address'
+
 class Array
   def to_hex_string
     raise "Not a byte array" unless self.is_byte_array?
