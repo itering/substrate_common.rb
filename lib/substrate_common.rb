@@ -17,11 +17,6 @@ class Array
     '0b' + self.map { |b| b.to_s(2).rjust(8, '0') }.join
   end
 
-  # def bytes_to_hex
-    # raise "Not a byte array" unless self.is_byte_array?
-    # self.map { |b| b.to_s(16).rjust(2, '0') }
-  # end
-
   def bytes_to_bin
     raise "Not a byte array" unless self.is_byte_array?
     self.map { |b| b.to_s(2).rjust(8, '0') }
