@@ -11,6 +11,8 @@ class Address
     2, 3,
     # Kulupu (SS58, Reserved)
     16, 17,
+    # Darwinia Live
+    18,
     # Dothereum (SS58, AccountId)
     20, 21, 
     # Generic Substrate wildcard (SS58, AccountId)
