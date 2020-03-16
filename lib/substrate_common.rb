@@ -48,7 +48,7 @@ def xxhash128(data)
   bytes = []
   2.times do |i|
     result = XXhash.xxh64 data, i
-    bytes = bytes + result.to_s(16).rjust(16, '0').to_byte_array.reverse
+    bytes = bytes + result.to_s(16).rjust(16, '0').hex_to_bytes.reverse
   end
-  bytes.to_hex_string
+  bytes.bytes_to_hex
 end
