@@ -45,16 +45,17 @@ class String
 end
 
 module Crypto
-  def xxhash_128(data)
+  def self.xxhash_128(data)
     bytes = []
     2.times do |i|
       result = XXhash.xxh64 data, i
       bytes = bytes + result.to_s(16).rjust(16, '0').hex_to_bytes.reverse
     end
-    bytes.bytes_to_hex
+    bytes.bytes_to_hex[2..]
   end
 
-  def black2_256(data)
+  def self.black2_256(data)
+    # data = hex.hex_to_bytes.bytes_to_utf8
     Blake2b.hex data, Blake2b::Key.none, 32
   end
 end
