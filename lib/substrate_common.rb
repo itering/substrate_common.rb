@@ -45,7 +45,17 @@ class String
 end
 
 module Crypto
-  def self.xxhash_128(data)
+  def self.identity(data)
+    data
+  end
+
+  def self.twox64(data)
+    result = XXhash.xxh64 data, 0
+    bytes = result.to_s(16).rjust(16, '0').hex_to_bytes.reverse
+    bytes.bytes_to_hex[2..]
+  end
+
+  def self.twox128(data)
     bytes = []
     2.times do |i|
       result = XXhash.xxh64 data, i
@@ -54,8 +64,23 @@ module Crypto
     bytes.bytes_to_hex[2..]
   end
 
-  def self.black2_256(data)
-    # data = hex.hex_to_bytes.bytes_to_utf8
+  def self.twox64_concat(bytes)
+    data = bytes.bytes_to_utf8
+    twox64(data) + bytes.bytes_to_hex[2..]
+  end
+
+  def self.black2_128(bytes)
+    data = bytes.bytes_to_utf8
+    Blake2b.hex data, Blake2b::Key.none, 16
+  end
+
+  def self.black2_256(bytes)
+    data = bytes.bytes_to_utf8
     Blake2b.hex data, Blake2b::Key.none, 32
+  end
+
+  def self.blake2_128_concat(bytes)
+    data = bytes.bytes_to_utf8
+    black2_128(data) + bytes.bytes_to_hex[2..]
   end
 end
