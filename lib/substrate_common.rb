@@ -80,7 +80,6 @@ module Crypto
   end
 
   def self.blake2_128_concat(bytes)
-    data = bytes.bytes_to_utf8
-    black2_128(data) + bytes.bytes_to_hex[2..]
+    black2_128(bytes) + bytes.bytes_to_hex[2..]
   end
 end
