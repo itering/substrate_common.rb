@@ -69,17 +69,17 @@ module Crypto
     twox64(data) + bytes.bytes_to_hex[2..]
   end
 
-  def self.black2_128(bytes)
+  def self.blake2_128(bytes)
     data = bytes.bytes_to_utf8
     Blake2b.hex data, Blake2b::Key.none, 16
   end
 
-  def self.black2_256(bytes)
+  def self.blake2_256(bytes)
     data = bytes.bytes_to_utf8
     Blake2b.hex data, Blake2b::Key.none, 32
   end
 
   def self.blake2_128_concat(bytes)
-    black2_128(bytes) + bytes.bytes_to_hex[2..]
+    blake2_128(bytes) + bytes.bytes_to_hex[2..]
   end
 end
