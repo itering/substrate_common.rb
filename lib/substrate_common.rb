@@ -45,8 +45,8 @@ class String
 end
 
 module Crypto
-  def self.identity(data)
-    data
+  def self.identity(bytes)
+    bytes.bytes_to_hex[2..]
   end
 
   def self.twox64(data)
